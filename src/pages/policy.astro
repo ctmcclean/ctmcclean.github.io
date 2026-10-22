@@ -1,0 +1,73 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const all = (await getCollection('policy')).sort((a, b) => b.data.year - a.data.year);
+const opEds = all.filter((p) => p.data.section === 'op_ed');
+const cc = all.filter((p) => p.data.section === 'comparative_connections');
+const other = all.filter((p) => p.data.section === 'other');
+
+// Same conventions as the Research page: coauthors after the title, extra links after the citation.
+const listJoin = (a: string[]) =>
+  a.length <= 1 ? a.join('') : a.length === 2 ? `${a[0]} and ${a[1]}` : `${a.slice(0, -1).join(', ')}, and ${a[a.length - 1]}`;
+---
+
+<Base title="Policy" description="Op-eds, commentary, and policy writing on Japan, U.S.-Japan relations, and demographic change.">
+  <header class="page-head">
+    <p class="kicker">Policy</p>
+    <h1>Commentary and policy writing</h1>
+    <p class="lede">
+      Writing for policy and general audiences, including a decade of U.S.-Japan relations chronicles for Pacific
+      Forum's <em>Comparative Connections</em> with Sheila Smith.
+    </p>
+  </header>
+
+  <h2>Op-eds and commentary</h2>
+  <ul class="works">
+    {opEds.map((p) => (
+      <li>
+        <div class="work-title">
+          <a href={p.data.url}>{p.data.title}</a>
+          {p.data.coauthors.length > 0 && <span class="authors"> (with {listJoin(p.data.coauthors)})</span>}
+        </div>
+        <div class="work-cite">
+          {p.data.detail}
+          {p.data.extra_links.map((l) => <> · <a href={l.url}>{l.label}</a></>)}
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <h2>Comparative Connections</h2>
+  <p class="prose">Triannual chronicles of U.S.-Japan relations for Pacific Forum's <em>Comparative Connections</em>, with Sheila Smith, 2015–2024.</p>
+  <ul class="works compact">
+    {cc.map((p) => (
+      <li>
+        <div class="work-title"><a href={p.data.url}>{p.data.title}</a></div>
+        <div class="work-cite">
+          {p.data.detail}
+          {p.data.extra_links.map((l) => <> · <a href={l.url}>{l.label}</a></>)}
+        </div>
+      </li>
+    ))}
+  </ul>
+
+  <h2>Earlier writing</h2>
+  <ul class="works">
+    {other.map((p) => (
+      <li>
+        <div class="work-title">
+          <a href={p.data.url}>{p.data.title}</a>
+          {p.data.coauthors.length > 0 && <span class="authors"> (with {listJoin(p.data.coauthors)})</span>}
+        </div>
+        <div class="work-cite">{p.data.detail}</div>
+      </li>
+    ))}
+  </ul>
+</Base>
+
+<style>
+  .compact li { padding: 0.6rem 0; }
+  .compact .work-title { font-size: 1.02rem; }
+  .compact .work-cite { font-size: 0.92rem; }
+</style>

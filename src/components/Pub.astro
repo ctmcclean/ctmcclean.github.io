@@ -1,0 +1,63 @@
+---
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  pub: CollectionEntry<'publications'>['data'];
+  extra?: CollectionEntry<'coverage'>['data'];
+}
+const { pub, extra } = Astro.props;
+
+const link = pub.doi ? `https://doi.org/${pub.doi}` : pub.url ?? extra?.url ?? extra?.pdf ?? null;
+const withAuthors = pub.coauthors.length ? `(with ${listJoin(pub.coauthors)})` : '';
+const vol = pub.volume ? `${pub.volume}${pub.issue ? `(${pub.issue})` : ''}` : '';
+const pages = pub.pages ? `:${pub.pages}` : '';
+const editors = Array.isArray(pub.editors) ? listJoin(pub.editors) : pub.editors;
+const yearText = pub.status === 'forthcoming' ? 'Forthcoming' : pub.status === 'in_press' ? 'In press' : String(pub.year);
+
+// Abstract opens in place below the note lines; PDFs serve only as the title link fallback.
+const abstract = pub.abstract?.trim() || null;
+const hasNote = Boolean(extra?.award || extra?.items?.length || abstract);
+
+function listJoin(a: string[]) {
+  if (a.length <= 1) return a.join('');
+  if (a.length === 2) return `${a[0]} and ${a[1]}`;
+  return `${a.slice(0, -1).join(', ')}, and ${a[a.length - 1]}`;
+}
+---
+
+<li>
+  <div class="work-title">
+    {link ? <a href={link}>{pub.title}</a> : pub.title}
+    {withAuthors && <span class="authors"> {withAuthors}</span>}
+  </div>
+  <div class="work-cite">
+    {yearText}. {pub.type === 'book_chapter' && editors ? <>In {editors}, {Array.isArray(pub.editors) && pub.editors.length === 1 ? 'ed.' : 'eds.'} </> : null}
+    <em>{pub.venue}</em>{vol ? <> {vol}{pages}</> : pages ? <> {pub.pages}</> : null}.
+    {pub.publisher ? <> {pub.publisher}.</> : null}
+  </div>
+  {hasNote && (
+    <div class="work-note">
+      {extra?.award && (
+        <div>
+          <span class="pill accent">Award</span>{' '}
+          {extra.award.url ? <a href={extra.award.url}>{extra.award.name}</a> : extra.award.name}
+        </div>
+      )}
+      {extra?.items?.length ? (
+        <div>
+          <span class="pill">Media</span>{' '}
+          {extra.items.map((c, i) => (
+            <>{i > 0 && ', '}<a href={c.url}>{c.outlet}</a></>
+          ))}
+        </div>
+      ) : null}
+      {abstract && (
+        <details class="abs">
+          <summary>Abstract</summary>
+          <p>{abstract}</p>
+        </details>
+      )}
+    </div>
+  )}
+</li>
+

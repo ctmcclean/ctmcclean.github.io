@@ -1,0 +1,90 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Pub from '../components/Pub.astro';
+// Copy is Charlie's own pitch for the book (October 2026), in the style of a publisher's description.
+const pubs = await getCollection('publications');
+const coverage = new Map((await getCollection('coverage')).map((c) => [c.id, c.data]));
+// Papers from the book, in the order the pitch reaches them: voters, spending, legitimacy.
+const BOOK_PAPERS = ['too-young-to-run-2024', 'social-spending-2026', 'legitimacy-2026'];
+const papers = BOOK_PAPERS.map((id) => pubs.find((p) => p.id === id)).filter((p) => p !== undefined);
+// Award pill and PDF fallback come from coverage.yaml; the per-paper media list is dropped here
+// because the Coverage section below lists the book's press as a whole.
+const extraFor = (id: string) => {
+  const c = coverage.get(id);
+  return c ? { ...c, items: [] } : undefined;
+};
+---
+
+<Base title="Silver Democracy" description="Silver Democracy: Youth Representation in an Aging Japan. Why young people are underrepresented in elected office, and what changes when they win.">
+  <header class="page-head">
+    <p class="kicker">Book project</p>
+    <h1>Silver Democracy <span class="sub">Youth Representation in an Aging Japan</span></h1>
+    <p class="questions">
+      Why are young people underrepresented in elected office? And what changes for policy and democracy when
+      they win?
+    </p>
+  </header>
+
+  <div class="prose">
+    <p>
+      In nearly every democracy, the people who will live longest with the consequences of today’s decisions are
+      the very people least likely to be making them. As populations age and the young become an ever smaller
+      proportion of the electorate, the worry is that their concerns will be even less represented and their faith
+      in democratic institutions will continue to erode. Japan offers a window into that future. It is the world’s
+      oldest society and one where the young are especially underrepresented at all levels of government, from
+      local assemblies to the national parliament.
+    </p>
+    <p>
+      In <em>Silver Democracy</em>, I argue that the problem is not that young candidates are less appealing to
+      voters. To the contrary, many voters, including older voters, like young candidates for their fresh ideas,
+      their focus on the needs of young families, and their personal stake in the long-term challenges of population
+      aging and decline. The problem is institutional. In Japan, as in many democracies, a successful candidacy often depends
+      on money, name recognition, and networks that can take decades to build. These demands favor older
+      people with established careers, keeping younger people off the ballot before voters get a say.
+    </p>
+    <p>
+      I then show how youth representation has substantial consequences for policy and democracy. Municipalities
+      that elect a young mayor increase spending on child welfare for young families, especially through long-term
+      investments in childcare infrastructure, but do not cut elderly welfare spending. Bringing more young people
+      into municipal assemblies also enhances perceptions of fairness and trust in institutions, even among the
+      elderly. Together, these findings suggest that greater youth representation can encourage investment in the
+      future and strengthen confidence in democratic institutions without pitting young against old.
+    </p>
+    <p>
+      The book draws on both quantitative and qualitative methods. At the heart is my newly constructed{' '}
+      <a href="/jmed/">Japanese Municipal Elections Dataset (JMED)</a>, which covers the near universe of
+      candidates who ran for municipal assembly or mayor from 2005 to 2025: 223,569 candidates competing in 21,111
+      elections across 2,027 municipalities. With this new data, I first use quasi-experimental analyses to examine
+      how institutions keep young people off the ballot and how policy changes when young people are elected. I
+      then pair these observational tests with survey experiments that use age regression and progression software
+      to vary politicians’ apparent ages and see how citizens respond, and with evidence from other advanced
+      democracies to show that the results extend beyond Japan.
+    </p>
+    <p>
+      Finally, I draw on more than 40 interviews in Japanese with mayors, assembly members, and local officials to
+      understand how younger politicians decide to run and what their priorities are once in office.
+    </p>
+
+    <h2>Related papers</h2>
+    <ul class="works">
+      {papers.map((p) => <Pub pub={p.data} extra={extraFor(p.id)} />)}
+    </ul>
+
+    <h2>Coverage</h2>
+    <p>
+      I have discussed the book's findings in the{' '}
+      <a href="https://www.asahi.com/articles/DA3S15557764.html">Asahi Shimbun</a>,{' '}
+      <a href="https://www.economist.com/asia/2024/06/27/takashima-ryosuke-is-japans-youngest-ever-mayor">The Economist</a>,{' '}
+      <a href="https://www.npr.org/2023/06/28/1184894573/the-growing-concern-of-japans-silver-democracy">NPR</a>{' '}
+      (<a href="https://www.npr.org/2023/06/29/1184972678/rapidly-aging-societies-such-as-japan-worry-about-whats-called-silver-democracy">2</a>), and{' '}
+      <a href="https://www.wsj.com/video/series/wsj-explains/why-the-world-leaders-are-getting-older/7038C1C2-4CDC-47E3-8F3C-AD5F37235C5E">The Wall Street Journal</a>{' '}
+      (<a href="https://www.wsj.com/world/for-world-leaders-70-is-the-new-50-290c1ba7">2</a>).
+    </p>
+  </div>
+</Base>
+
+<style>
+  .sub { display: block; font-size: 0.55em; color: var(--ink-2); font-weight: 400; margin-top: 0.4rem; letter-spacing: 0; }
+  .questions { margin: 1.4rem 0 0; max-width: var(--measure); font-size: 1.25rem; line-height: 1.4; color: var(--ink); }
+</style>

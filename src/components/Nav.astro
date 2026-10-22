@@ -1,0 +1,40 @@
+---
+const items = [
+  { href: '/research/', label: 'Research' },
+  { href: '/book/', label: 'Book' },
+  { href: '/jmed/', label: 'JMED' },
+  { href: '/policy/', label: 'Policy' },
+  { href: '/teaching/', label: 'Teaching' },
+  { href: '/lab/', label: 'Lab' },
+  { href: '/news/', label: 'News' },
+  { href: '/s/cmcclean_CV.pdf', label: 'CV' },
+];
+const path = Astro.url.pathname;
+const isActive = (href: string) => href !== '/' && path.startsWith(href);
+---
+
+<header class="site-head">
+  <div class="wrap bar">
+    <a class="brand" href="/">Charles T. McClean</a>
+    <nav aria-label="Primary">
+      {items.map((i) => (
+        <a href={i.href} aria-current={isActive(i.href) ? 'page' : undefined}>{i.label}</a>
+      ))}
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-head { border-bottom: 1px solid var(--rule); background: var(--paper); }
+  .bar { display: flex; align-items: baseline; justify-content: space-between; gap: 1.5rem; padding: 1.1rem 0; flex-wrap: wrap; }
+  .brand { font-family: var(--serif); font-size: 1.25rem; font-weight: 500; text-decoration: none; letter-spacing: -0.01em; }
+  nav { display: flex; gap: 1.4rem; flex-wrap: wrap; font-family: var(--sans); font-size: 0.95rem; }
+  nav a { text-decoration: none; color: var(--ink-2); padding-bottom: 2px; border-bottom: 1.5px solid transparent; }
+  nav a:hover { color: var(--ink); border-bottom-color: var(--rule); }
+  nav a[aria-current='page'] { color: var(--ink); border-bottom-color: var(--accent); }
+  @media (max-width: 760px) {
+    .bar { padding: 0.9rem 0; gap: 0.6rem; }
+    nav { gap: 0.25rem 1rem; font-size: 1rem; }
+    nav a { padding: 0.35rem 0; }
+  }
+</style>

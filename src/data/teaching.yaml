@@ -1,0 +1,66 @@
+# Courses taught. Hand-maintained. `order` sets the display order (the loader
+# does not keep file order); Yale courses first. Each Yale
+# description is the course description from the syllabus, verbatim. Syllabi
+# live in public/syllabi/ (copy the newest PDF there and update `syllabus`).
+- id: yale-japanese-politics
+  order: 1
+  institution: Yale University
+  course: Japanese Politics and Foreign Policy
+  number: PLSC 2433/7433, EAST 2521
+  level: Undergraduate/graduate seminar
+  years: "2022, 2024, 2026"
+  term: Fall 2026
+  syllabus: /syllabi/japanese-politics-and-foreign-policy-fall-2026.pdf
+  description: >-
+    This class introduces students to 11 important puzzles about contemporary Japanese politics and foreign policy, discusses various ways in which scholars have attempted to solve these puzzles, and suggests pathways for future research. Together, we seek to explain policy outcomes across a wide range of topics, including constitutional revision, defense, economic growth, energy, gender, immigration, income inequality, population aging, territorial disputes, and trade. In the process, we learn (1) the important actors in Japanese politics (e.g., voters, politicians, parties, bureaucrats, and firms); (2) the positions that different actors take with respect to various policies, as well as the sources of these policy preferences; and (3) how political institutions block or enhance the representation of these actors’ interests.
+- id: yale-advanced-democracies
+  order: 2
+  institution: Yale University
+  course: Advanced Democracies
+  number: PLSC 7435
+  level: Graduate seminar
+  years: "2026"
+  term: Fall 2026
+  syllabus: /syllabi/advanced-democracies-fall-2026.pdf
+  description: >-
+    This course examines political challenges facing advanced democracies in the 21st century. Rather than focusing on democratic transitions or regime stability, we will investigate what political problems emerge after democracy consolidates. Topics include the puzzle of redistribution, unequal political representation, welfare state restructuring, globalization’s winners and losers, migration and membership, populism and democratic backsliding, demographic change, gender and care policy, and climate change. The course emphasizes both foundational theoretical frameworks and cutting-edge empirical research in comparative political economy.
+- id: yale-age-and-power
+  order: 3
+  institution: Yale University
+  course: Age and Power
+  level: Undergraduate lecture
+  years: "2027"
+  term: Spring 2027
+  planned: true
+  syllabus: /syllabi/age-and-power-spring-2027.pdf
+  description: >-
+    Younger people often have less political power than older people, yet they will live longer with the consequences of decisions made today. This imbalance takes on new urgency as declining birth rates and population aging transform societies around the world. In this course, we will explore the relationship between age and power in the United States and other countries through topics including political participation, representation, climate change, education, technology, work, housing, inequality, fertility, immigration, retirement, and healthcare. Throughout, we will analyze how political decisions shape our opportunities and security across the life course.
+- id: yale-comparative-politics-ii
+  order: 4
+  institution: Yale University
+  course: Comparative Politics II
+  number: PLSC 778
+  level: Graduate seminar
+  years: "2024"
+  term: Fall 2024
+  syllabus: /syllabi/comparative-politics-ii-fall-2024.pdf
+  description: >-
+    This survey course provides a general introduction to the field of comparative politics, with an emphasis on the most important theories and research themes. Topics include the foundations of political regimes, state formation, identity and nationalism, party development, electoral reforms, programmatic and clientelistic linkages, and social policy development. At the same time, the course seeks to strengthen students’ analytical skills in evaluating comparative research and prepare students to take the examination in comparative politics.
+- id: michigan-japanese-politics
+  order: 5
+  institution: University of Michigan
+  course: Japanese Politics
+  level: Undergraduate lecture
+  years: "2022"
+- id: ycu-causal-inference
+  order: 6
+  institution: Yokohama City University
+  course: Causal Inference and Research Design
+  level: Undergraduate lecture
+  years: "2019"
+- id: ucsd-japanese-politics
+  order: 7
+  institution: University of California, San Diego
+  course: Japanese Politics
+  level: Undergraduate lecture
+  years: "2018"

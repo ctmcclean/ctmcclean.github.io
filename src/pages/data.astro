@@ -1,0 +1,24 @@
+---
+import Base from '../layouts/Base.astro';
+import { JMED_LIVE } from '../lib/launch.mjs';
+---
+
+<Base title="Data" description="Datasets and replication materials by Charles T. McClean.">
+  <header class="page-head">
+    <p class="kicker">Data</p>
+    <h1>Data</h1>
+  </header>
+  <div class="prose">
+    <h2>Japanese Municipal Elections Dataset (JMED)</h2>
+    <p>
+      Candidate-level results for Japanese municipal assembly and mayoral elections from 2005 to 2025:
+      223,569 candidates in 21,111 elections across 2,027 municipalities, with names, age, sex, party, incumbency,
+      and votes. {JMED_LIVE ? <a href="/jmed/">Documentation, downloads, and an interactive map</a> : <a href="/jmed/">More about JMED</a>}.
+    </p>
+    <h2>Replication materials</h2>
+    <p>
+      Data and code for my published work are on my{' '}
+      <a href="https://dataverse.harvard.edu/dataverse/charlesmcclean">Harvard Dataverse</a> page.
+    </p>
+  </div>
+</Base>

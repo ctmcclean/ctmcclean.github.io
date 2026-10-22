@@ -1,0 +1,46 @@
+# McClean Zemi members. Hand-maintained; `order` sets the display order (the loader does not keep file order).
+# name_ja: Japanese name as the student writes it (e.g. 阿部菜穂). year: class year (e.g. "’27").
+# college: Yale residential college. photo: path under src/assets/lab/ once the student has given
+# a photo and consent (square crop, 400px or more). Empty fields are simply not shown.
+- id: naho-abe
+  order: 1
+  name: Naho Abe
+  name_ja: "阿部菜穂"
+  year: "’27"
+  college: "Silliman"
+  photo: ""
+- id: ryne-hisada
+  order: 2
+  name: Ryne Hisada
+  name_ja: "久田ライン"
+  year: "’27"
+  college: "Davenport"
+  photo: ""
+- id: mai-ishimura
+  order: 3
+  name: Mai Ishimura
+  name_ja: "石村眞愛"
+  year: "’29"
+  college: "Pierson"
+  photo: ""
+- id: rena-kawasaki
+  order: 4
+  name: Rena Kawasaki
+  name_ja: "川﨑レナ"
+  year: "’27"
+  college: "Pierson"
+  photo: ""
+- id: marin-korenaga
+  order: 5
+  name: Marin Korenaga
+  name_ja: "是永真凜"
+  year: "’28"
+  college: "Trumbull"
+  photo: ""
+- id: moe-shimizu
+  order: 6
+  name: Moe Shimizu
+  name_ja: "清水萌絵"
+  year: "’27"
+  college: "Davenport"
+  photo: ""

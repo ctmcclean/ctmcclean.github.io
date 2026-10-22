@@ -1,0 +1,225 @@
+# Policy writing, ported from the Squarespace Policy page (2026-10-18). Hand-maintained.
+- id: social-structure-demographics-and-the-sustainability-of-the-
+  title: "Social Structure, Demographics, and the Sustainability of the Alliance"
+  url: "https://www.jfir.or.jp/en/wp-content/uploads/sites/2/2026/07/7655569d0549c06cf868f43643207334.pdf"
+  section: op_ed
+  year: 2026
+  detail: "May 31, 2026. In The Deepening of US-Japan Cooperation on ‘Non-Military’ Aspects. Japan Forum on International Relations. 20–21."
+  extra_links:
+    - { label: "Japanese version", url: "https://www.jfir.or.jp/wp/wp-content/uploads/2026/07/260630_prj.pdf" }
+- id: south-korea-s-new-leader-says-there-s-no-gender-inequality-p
+  title: "South Korea’s New Leader Says There’s No Gender Inequality Problem"
+  url: "https://www.washingtonpost.com/politics/2022/04/26/south-korea-election-gender-ministry-feminism-backlash/"
+  section: op_ed
+  year: 2022
+  detail: "April 26, 2022. The Washington Post."
+  coauthors: ["Don Lee"]
+- id: no-evidence-school-closures-reduce-the-spread-of-covid-19
+  title: "No Evidence School Closures Reduce the Spread of COVID-19"
+  url: "https://socialsciences.nature.com/posts/no-evidence-school-closures-reduce-the-spread-of-covid-19"
+  section: op_ed
+  year: 2021
+  detail: "November 3, 2021. Nature Portfolio (Behavioral and Social Sciences)."
+  coauthors: ["Kentaro Fukumoto", "Kuninori Nakagawa"]
+- id: once-again-leadership-transitions-challenge-us-japan-allianc
+  title: "Once Again, Leadership Transitions Challenge US-Japan Alliance"
+  url: "https://cc.pacforum.org/2024/12/once-again-leadership-transitions-challenges-us-japan-alliance/"
+  section: comparative_connections
+  year: 2024
+  detail: "2024. 26(2):27–38."
+- id: washington-welcomes-prime-minister-kishida
+  title: "Washington Welcomes Prime Minister Kishida"
+  url: "https://cc.pacforum.org/2024/05/washington-welcomes-prime-minister-kishida/"
+  section: comparative_connections
+  year: 2024
+  detail: "2024. 26(1):29–38."
+- id: a-busy-diplomatic-calendar-for-biden-and-kishida
+  title: "A Busy Diplomatic Calendar for Biden and Kishida"
+  url: "https://cc.pacforum.org/2023/09/a-busy-diplomatic-calendar-for-biden-and-kishida/"
+  section: comparative_connections
+  year: 2023
+  detail: "2023. 25(2):25–32."
+- id: the-u-s-and-japan-build-multilateral-momentum
+  title: "The U.S. and Japan Build Multilateral Momentum"
+  url: "https://cc.pacforum.org/2023/05/the-us-and-japan-build-multilateral-momentum/"
+  section: comparative_connections
+  year: 2023
+  detail: "2023. 25(1):25–32. Republished in Asia Times."
+  extra_links:
+    - { label: "Asia Times", url: "https://asiatimes.com/2023/05/japan-us-at-g7-can-bask-in-multilateral-momentum/" }
+- id: ramping-up-diplomacy-and-defense-cooperation
+  title: "Ramping Up Diplomacy and Defense Cooperation"
+  url: "https://cc.pacforum.org/2023/01/ramping-up-diplomacy-and-defense-cooperation/"
+  section: comparative_connections
+  year: 2023
+  detail: "2023. 24(3):19–28."
+- id: abe-s-legacy-and-the-alliance-agenda
+  title: "Abe’s Legacy and the Alliance Agenda"
+  url: "https://cc.pacforum.org/2022/09/abes-legacy-and-the-alliance-agenda/"
+  section: comparative_connections
+  year: 2022
+  detail: "2022. 24(2):21–28."
+- id: russian-invasion-accelerates-alliance-review
+  title: "Russian Invasion Accelerates Alliance Review"
+  url: "https://cc.pacforum.org/2022/05/russian-invasion-accelerates-alliance-review/"
+  section: comparative_connections
+  year: 2022
+  detail: "2022. 24(1):19–28."
+- id: a-new-prime-minister-and-a-growing-alliance-agenda
+  title: "A New Prime Minister and a Growing Alliance Agenda"
+  url: "https://cc.pacforum.org/2022/01/a-new-prime-minister-and-a-growing-alliance-agenda/"
+  section: comparative_connections
+  year: 2022
+  detail: "2022. 23(3):21–30."
+- id: summer-takes-an-unexpected-turn
+  title: "Summer Takes an Unexpected Turn"
+  url: "http://cc.pacforum.org/2021/09/summer-takes-an-unexpected-turn/"
+  section: comparative_connections
+  year: 2021
+  detail: "2021. 23(2):17–24."
+- id: suga-and-biden-off-to-a-good-start
+  title: "Suga and Biden Off to a Good Start"
+  url: "http://cc.pacforum.org/2021/05/suga-and-biden-off-to-a-good-start/"
+  section: comparative_connections
+  year: 2021
+  detail: "2021. 23(1):21–28."
+- id: leadership-transitions-in-tokyo-and-washington
+  title: "Leadership Transitions in Tokyo and Washington"
+  url: "http://cc.pacforum.org/2021/01/leadership-transitions-in-tokyo-and-washington/"
+  section: comparative_connections
+  year: 2021
+  detail: "2021. 22(3):19–28."
+- id: unexpected-turbulence-for-the-alliance
+  title: "Unexpected Turbulence for the Alliance"
+  url: "http://cc.pacforum.org/2020/09/unexpected-turbulence-for-the-alliance/"
+  section: comparative_connections
+  year: 2020
+  detail: "2020. 22(2):13–22."
+- id: covid-19-overtakes-japan-and-the-united-states
+  title: "COVID-19 Overtakes Japan and the United States"
+  url: "http://cc.pacforum.org/2020/05/covid-19-overtakes-japan-and-the-united-states/"
+  section: comparative_connections
+  year: 2020
+  detail: "2020. 22(1):15–26."
+- id: the-finale-for-abe-trump-alliance-management
+  title: "The Finale for Abe-Trump Alliance Management?"
+  url: "http://cc.pacforum.org/2020/01/the-finale-for-abe-trump-alliance-management/"
+  section: comparative_connections
+  year: 2020
+  detail: "2020. 21(3):11–20."
+- id: a-busy-summer-of-bilateralism
+  title: "A Busy Summer of Bilateralism"
+  url: "http://cc.pacforum.org/2019/09/a-busy-summer-of-bilateralism/"
+  section: comparative_connections
+  year: 2019
+  detail: "2019. 21(2):13–20."
+- id: treading-water-in-choppier-surf
+  title: "Treading Water in Choppier Surf"
+  url: "http://cc.pacforum.org/2019/05/treading-water-in-choppier-surf/"
+  section: comparative_connections
+  year: 2019
+  detail: "2019. 21(1):15–22."
+- id: stability-in-tokyo-disruption-in-washington
+  title: "Stability in Tokyo, Disruption in Washington"
+  url: "http://cc.pacforum.org/2019/01/stability-in-tokyo-disruption-in-washington/"
+  section: comparative_connections
+  year: 2019
+  detail: "2019. 20(3):11–18."
+- id: summer-before-the-storm
+  title: "Summer Before the Storm?"
+  url: "http://cc.pacforum.org/2018/09/summer-before-the-storm/"
+  section: comparative_connections
+  year: 2018
+  detail: "2018. 20(2):13–20."
+- id: adjusting-to-abrupt-diplomacy
+  title: "Adjusting to Abrupt Diplomacy"
+  url: "http://cc.pacforum.org/2018/05/adjusting-to-abrupt-diplomacy/"
+  section: comparative_connections
+  year: 2018
+  detail: "2018. 20(1):11–18."
+- id: trump-visits-tokyo-amid-north-korea-tensions
+  title: "Trump Visits Tokyo Amid North Korea Tensions"
+  url: "http://cc.pacforum.org/2018/01/trump-visits-tokyo-amid-north-korea-tentions/"
+  section: comparative_connections
+  year: 2018
+  detail: "2018. 19(3):11–18."
+- id: a-summer-of-setbacks
+  title: "A Summer of Setbacks"
+  url: "http://cc.pacforum.org/2017/09/us-japan-relations-a-summer-of-setbacks/"
+  section: comparative_connections
+  year: 2017
+  detail: "2017. 19(2):11–20."
+- id: tokyo-transitions-to-trump
+  title: "Tokyo Transitions to Trump"
+  url: "http://cc.pacforum.org/2017/05/tokyo-transitions-trump/"
+  section: comparative_connections
+  year: 2017
+  detail: "2017. 19(1):11–20."
+- id: u-s-japan-relations-and-the-trump-effect
+  title: "U.S.-Japan Relations and the Trump Effect"
+  url: "http://cc.pacforum.org/2017/01/us-japan-relations-trump-effect/"
+  section: comparative_connections
+  year: 2017
+  detail: "2017. 18(3):9–16."
+- id: hiroshima-to-the-hague
+  title: "Hiroshima to The Hague"
+  url: "http://cc.pacforum.org/2016/09/hiroshima-to-the-hague/"
+  section: comparative_connections
+  year: 2016
+  detail: "2016. 18(2):15–24."
+- id: 2016-opens-with-a-bang
+  title: "2016 Opens with a Bang"
+  url: "http://cc.pacforum.org/2016/05/2016-opens-bang/"
+  section: comparative_connections
+  year: 2016
+  detail: "2016. 18(1):15–22."
+- id: official-cooperation-domestic-challenges
+  title: "Official Cooperation, Domestic Challenges"
+  url: "http://cc.pacforum.org/2016/01/official-cooperation-domestic-challenges/"
+  section: comparative_connections
+  year: 2016
+  detail: "2016. 17(3):13–20."
+- id: history-and-other-alliance-constraints
+  title: "History and Other Alliance Constraints"
+  url: "http://cc.pacforum.org/2015/09/history-alliance-constraints/"
+  section: comparative_connections
+  year: 2015
+  detail: "2015. 17(2):17–26."
+- id: getting-out-the-youth-vote-in-japan
+  title: "Getting Out the Youth Vote in Japan"
+  url: "https://www.cfr.org/blog/charles-t-mcclean-getting-out-youth-vote-japan"
+  section: other
+  year: 2013
+  detail: "August 5, 2013. Council on Foreign Relations."
+- id: japan-s-maritime-disputes-implications-for-the-u-s-japan-all
+  title: "Japan’s Maritime Disputes: Implications for the U.S.-Japan Alliance"
+  url: "https://www.cna.org/cna_files/pdf/dcp-2013-u-005049-final.pdf"
+  section: other
+  year: 2013
+  detail: "2013. In Michael McDevitt and Catherine Lea, eds. Japan’s Territorial Disputes. CNA Maritime Asia Project. 15–28."
+  coauthors: ["Sheila A. Smith"]
+- id: the-ldp-s-freshmen
+  title: "The LDP’s Freshmen"
+  url: "https://www.cfr.org/blog/charles-t-mcclean-ldps-freshmen"
+  section: other
+  year: 2012
+  detail: "December 18, 2012. Council on Foreign Relations."
+- id: how-japan-s-next-election-will-be-won
+  title: "How Japan’s Next Election Will Be Won"
+  url: "https://www.cfr.org/blog/how-japans-next-election-will-be-won"
+  section: other
+  year: 2012
+  detail: "October 4, 2012. Council on Foreign Relations."
+- id: the-u-s-approach-to-peacebuilding-from-a-whole-of-government
+  title: "The U.S. Approach to Peacebuilding: From a Whole-of-Government to a Whole-of-Alliance Approach with Japan"
+  url: "/s/Peacebuilding.pdf"
+  section: other
+  year: 2011
+  detail: "2011. In Toshiya Hoshino and Weston Konishi, eds. U.S.-Japan Alliance Peacebuilding Cooperation. Institute for Foreign Policy Analysis. 1–11."
+  coauthors: ["Weston Konishi"]
+- id: the-demographic-dilemma-examining-the-security-implications-
+  title: "The Demographic Dilemma: Examining the Security Implications of Japan’s Aging Population"
+  url: "/s/The-Demographic-Dilemma.pdf"
+  section: other
+  year: 2010
+  detail: "2010. In Yao (Adam) Liu, Faith Pang, and Sherry Lu, eds. Asia Pacific Reader: Passages. University of Toronto 2(1):70–71."

@@ -1,0 +1,40 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import NewsItem from '../../components/NewsItem.astro';
+import NewsFeature from '../../components/NewsFeature.astro';
+
+const all = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+// Feature the newest post that has a picture; the rest are listed by year.
+const featured = all.find((p) => p.data.image) ?? all[0];
+const posts = all.filter((p) => p !== featured);
+const years = [...new Set(posts.map((p) => p.data.date.getUTCFullYear()))];
+const tags = [...new Set(posts.flatMap((p) => p.data.tags))].sort();
+---
+
+<Base title="News" description="Talks, media, and project news from Charles T. McClean.">
+  <header class="page-head">
+    <p class="kicker">News</p>
+    <h1>News</h1>
+    <div class="tagbar">
+      {tags.map((t) => <a class="pill" href={`/news/tag/${t.toLowerCase()}/`}>{t}</a>)}
+    </div>
+  </header>
+
+  {featured && <NewsFeature post={featured} />}
+
+  {years.map((y) => (
+    <section>
+      <h2>{y}</h2>
+      <ul class="news-list">
+        {posts.filter((p) => p.data.date.getUTCFullYear() === y).map((p) => <NewsItem post={p} variant="rich" />)}
+      </ul>
+    </section>
+  ))}
+</Base>
+
+<style>
+  .tagbar { display: flex; gap: 0.4rem; flex-wrap: wrap; margin-top: 1rem; }
+  .tagbar a { text-decoration: none; }
+  .tagbar a:hover { border-color: var(--accent); color: var(--accent); }
+</style>

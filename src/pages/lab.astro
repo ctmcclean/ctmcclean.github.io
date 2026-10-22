@@ -1,0 +1,93 @@
+---
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+
+// Set when the students' own site exists; nothing about it is shown until then.
+const LAB_SITE: string | null = null;
+
+const members = (await getCollection('lab')).sort((a, b) => a.data.order - b.data.order);
+// Member photos: src/assets/lab/<id>.jpg, referenced by lab.yaml's `photo` field.
+const photos = import.meta.glob<{ default: ImageMetadata }>('../assets/lab/*.{jpg,jpeg,png,webp}', { eager: true });
+const photoFor = (path: string) => (path ? photos[`../${path.replace(/^src\//, '')}`]?.default ?? null : null);
+const initials = (name: string) => name.split(/\s+/).map((w) => w[0]).slice(0, 2).join('');
+---
+
+<Base title="McClean Zemi" description="The McClean Zemi is a research lab of Yale undergraduates working on the politics of age and Japan with Charles T. McClean.">
+  <header class="page-head">
+    <p class="kicker">Lab</p>
+    <h1>McClean Zemi <span class="ja">マックレーン・ゼミ</span></h1>
+    <p class="lede">
+      A research lab of Yale undergraduates working on the politics of age and Japan. <span class="nowrap">Zemi (ゼミ)</span> is
+      the Japanese word for a university seminar group that works closely with a faculty member over a sustained
+      period.
+    </p>
+    <div class="actions">
+      {LAB_SITE && <a class="btn primary" href={LAB_SITE}>Visit the lab site</a>}
+      <a class="btn" href="mailto:charles.mcclean@yale.edu?subject=McClean%20Zemi">Get in touch</a>
+    </div>
+  </header>
+
+  <h2>Members</h2>
+  <ul class="members">
+    {members.map((m) => {
+      const img = photoFor(m.data.photo);
+      const meta = [m.data.year, m.data.college].filter(Boolean).join(' · ');
+      return (
+        <li>
+          <div class="circle">
+            {img
+              ? <Image src={img} alt={m.data.name} width={224} height={224} densities={[1, 2]} />
+              : <div class="initials" aria-hidden="true">{initials(m.data.name)}</div>}
+          </div>
+          <div class="name">{m.data.name}</div>
+          {m.data.name_ja && <div class="name-ja" lang="ja">{m.data.name_ja}</div>}
+          {meta && <div class="meta">{meta}</div>}
+        </li>
+      );
+    })}
+  </ul>
+
+  <div class="prose">
+    <h2>What we work on</h2>
+    <p>
+      Members research a wide range of topics on the politics of age and Japan. Recent examples include the careers
+      of young politicians, young voters and social media, uncontested elections, political institutions,
+      pensions, childcare, education, and the hometown tax program. They also help build and check the{' '}
+      <a href="/jmed/">Japanese Municipal Elections Dataset</a>, tracing candidates and results through newspaper
+      archives and official records.
+    </p>
+
+    <h2>Join</h2>
+    <p>
+      Members are Yale undergraduates with an interest in Japan, political science, or both. Japanese helps for
+      much of the work but is not required for all of it. If you are a Yale student and would like to join, just{' '}
+      <a href="mailto:charles.mcclean@yale.edu?subject=McClean%20Zemi">send me a note</a>.
+    </p>
+    {LAB_SITE && (
+      <p>
+        The zemi keeps its own site, run by its members, with current projects and people:{' '}
+        <a href={LAB_SITE}>{LAB_SITE.replace(/^https?:\/\//, '')}</a>.
+      </p>
+    )}
+  </div>
+</Base>
+
+<style>
+  .nowrap { white-space: nowrap; }
+  .ja { display: block; font-size: 0.55em; color: var(--ink-3); font-weight: 400; margin-top: 0.4rem; letter-spacing: 0.02em; }
+  .actions { display: flex; gap: 0.75rem; margin-top: 1.5rem; flex-wrap: wrap; }
+  .members { list-style: none; padding: 0; margin: 0 0 3rem; display: flex; flex-wrap: wrap; gap: 1.75rem 2rem; }
+  .members li { width: 8.5rem; text-align: center; }
+  .circle { width: 7rem; aspect-ratio: 1; margin: 0 auto 0.75rem; border-radius: 50%; overflow: hidden; background: var(--paper-2); }
+  .circle img { width: 100%; height: 100%; object-fit: cover; }
+  .initials { width: 100%; height: 100%; display: grid; place-items: center; font-family: var(--serif); font-size: 2rem; font-weight: 500; color: var(--ink-3); letter-spacing: 0.02em; }
+  .name { font-family: var(--sans); font-size: 0.95rem; font-weight: 500; line-height: 1.3; }
+  .name-ja { font-size: 0.95rem; color: var(--ink-2); margin-top: 0.15rem; }
+  .meta { margin-top: 0.3rem; }
+  @media (max-width: 600px) {
+    .members { gap: 1.5rem 1.25rem; justify-content: center; }
+    .members li { width: 7.5rem; }
+    .circle { width: 6rem; }
+  }
+</style>

@@ -1,0 +1,91 @@
+# Media coverage and awards per publication, keyed by publications.yaml id.
+# Ported from the Squarespace Research page (2026-10-18). Hand-maintained.
+- id: legitimacy-2026
+  order: 1
+  award:
+    name: "2026 State Politics and Policy Quarterly Best Paper Award, APSA State Politics and Policy Section"
+    url: https://apsanet.org/membership/organized-sections/section22/
+  pdf: /s/Youth-Representation-and-Democratic-Legitimacy.pdf
+  items:
+    - { outlet: "US News & World Report", url: "https://www.usnews.com/news/best-countries/articles/2026-06-01/u-s-lawmakers-are-oldest-of-any-democracy-heres-why" }
+- id: social-spending-2026
+  order: 2
+  url: "https://www.journals.uchicago.edu/doi/10.1086/741605"
+  items:
+    - { outlet: "Asahi Shimbun", url: "https://www.asahi.com/articles/DA3S15557764.html" }
+    - { outlet: "President Online", url: "https://president.jp/articles/-/37755" }
+    - { outlet: "The Wall Street Journal", url: "https://www.wsj.com/video/series/wsj-explains/why-the-world-leaders-are-getting-older/7038C1C2-4CDC-47E3-8F3C-AD5F37235C5E" }
+    - { outlet: "The Wall Street Journal (2)", url: "https://www.wsj.com/world/for-world-leaders-70-is-the-new-50-290c1ba7" }
+- id: underrepresented-voters-2026
+  order: 3
+  pdf: /s/How-Do-Underrepresented-Voters-View-Electoral-System-Trade-Offs.pdf
+  items: []
+- id: too-young-to-run-2024
+  order: 6
+  url: "https://link.springer.com/article/10.1007/s11109-024-09920-2"
+  items:
+    - { outlet: "Asahi Shimbun", url: "https://digital.asahi.com/articles/ASS4S0TMYS4SULLI00NM.html" }
+    - { outlet: "Asahi Shimbun (2)", url: "https://www.asahi.com/articles/ASR4644JLR44DIFI001.html" }
+    - { outlet: "Asahi Shimbun (3)", url: "https://www.asahi.com/articles/ASR4644J1R44DIFI00K.html" }
+- id: legislative-resources-2024
+  order: 7
+  url: "https://www.cambridge.org/core/journals/british-journal-of-political-science/article/legislative-resources-corruption-and-incumbency/FE9D6678534A0450E57C19A97A4D45FF"
+  items:
+    - { outlet: "Business Standard", url: "https://www.business-standard.com/elections/lok-sabha-election/lok-sabha-elections-incumbents-constesting-may-be-at-47-year-low-124052901541_1.html" }
+- id: glass-ceiling-2022
+  order: 9
+  url: "https://journals.sagepub.com/doi/full/10.1177/00104140211047412"
+  items:
+    - { outlet: "The Washington Post", url: "https://www.washingtonpost.com/politics/2022/04/26/south-korea-election-gender-ministry-feminism-backlash/" }
+- id: school-closures-covid-2021
+  order: 10
+  url: "https://www.nature.com/articles/s41591-021-01571-8"
+  items:
+    - { outlet: "Asahi Shimbun", url: "https://www.asahi.com/ajw/articles/14474926" }
+    - { outlet: "Asahi Shimbun (2)", url: "https://www.asahi.com/articles/ASPC162PVPBWULEI00F.html" }
+    - { outlet: "Asahi Shimbun (3)", url: "https://www.asahi.com/articles/DA3S15100389.html" }
+    - { outlet: "Asahi Shimbun (4)", url: "https://www.asahi.com/articles/ASP6J51TNP6CULEI00B.html" }
+    - { outlet: "Mainichi Weekly Economist", url: "https://weekly-economist.mainichi.jp/articles/20211130/se1/00m/020/043000c" }
+    - { outlet: "Nature Japan", url: "https://www.natureasia.com/ja-jp/ndigest/v19/n2/小中学校の休校に感染抑止効果は確認できず/111423" }
+    - { outlet: "Nature Medicine", url: "https://www.nature.com/articles/s41591-021-01585-2" }
+    - { outlet: "Nature Portfolio", url: "https://socialsciences.nature.com/posts/no-evidence-school-closures-reduce-the-spread-of-covid-19" }
+    - { outlet: "Nikkei Business", url: "https://business.nikkei.com/atcl/NBD/19/00150/111900009/" }
+    - { outlet: "Nikkei Business (2)", url: "https://business.nikkei.com/atcl/gen/19/00351/102900006/" }
+    - { outlet: "Nikkei Shimbun", url: "https://www.nikkei.com/article/DGXZQOUC105560Q1A111C2000000/" }
+    - { outlet: "Nippon TV News 24", url: "https://www.news24.jp/articles/2021/11/10/07972103.html" }
+    - { outlet: "The Telegraph", url: "https://www.telegraph.co.uk/news/2021/11/01/school-closures-did-not-significantly-reduce-covid-spread/" }
+    - { outlet: "The Washington Post", url: "https://www.washingtonpost.com/world/2022/01/07/global-school-closures-omicron/" }
+    - { outlet: "The World Bank", url: "https://blogs.worldbank.org/education/schools-great-equalizer-vanished" }
+- id: element-of-surprise-2021
+  order: 11
+  url: "https://journals.sagepub.com/doi/10.1177/0010414021997172"
+  award:
+    name: "2022 Best Paper Award, APSA Elections, Public Opinion, and Voting Behavior Section"
+    url: https://connect.apsanet.org/s32/awards/
+  items:
+    - { outlet: "Asahi Shimbun", url: "https://www.asahi.com/articles/DA3S15557764.html" }
+- id: follow-your-heart-2020
+  order: 12
+  url: "https://onlinelibrary.wiley.com/doi/full/10.1111/pops.12594"
+  items:
+    - { outlet: "PsyPost", url: "https://www.psypost.org/2019/07/physiological-reactivity-linked-to-seeking-politically-like-minded-social-networks-54010" }
+
+- id: idiom-of-distress-2026
+  order: 4
+  url: "https://www.tandfonline.com/doi/full/10.1080/09555803.2026.2639984"
+- id: selective-development-goals-2025
+  order: 5
+  url: "https://academic.oup.com/ssjj/article/28/2/jyaf021/8202164"
+- id: minority-governments-2024
+  url: "https://link.springer.com/chapter/10.1007/978-3-031-69347-2_7"
+- id: field-research-japan-2023
+  order: 8
+  url: "https://www.cambridge.org/core/journals/ps-political-science-and-politics/article/abs/field-research-when-there-is-limited-access-to-the-field-lessons-from-japan/AFFB58E13F44B31F63C58A452F57C697"
+- id: generational-change-japan-2023
+  url: "https://link.springer.com/chapter/10.1007/978-3-031-11324-6_9"
+- id: aging-antimilitarism-2023
+  url: "https://www.nbr.org/publication/tom-phuong-les-japans-aging-peace-pacifism-and-militarism-in-the-twenty-first-century/"
+- id: japan-digital-campaigning-2022
+  url: "https://www.idea.int/publications/catalogue/digital-campaigning-and-political-finance-asia-and-pacific-region-new-age-old"
+- id: japan-elite-continuity-2016
+  url: "https://www.mulino.it/isbn/9788815258953"

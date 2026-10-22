@@ -1,0 +1,56 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Pub from '../components/Pub.astro';
+
+const pubs = await getCollection('publications');
+const coverage = new Map((await getCollection('coverage')).map((c) => [c.id, c.data]));
+const wip = await getCollection('wip');
+
+const byYear = (a: any, b: any) => b.data.year - a.data.year;
+// Articles follow the CV order (coverage.yaml `order`); anything unordered falls back to year.
+const byCv = (a: any, b: any) => {
+  const oa = coverage.get(a.id)?.order ?? Infinity;
+  const ob = coverage.get(b.id)?.order ?? Infinity;
+  return oa - ob || byYear(a, b);
+};
+const articles = pubs.filter((p) => p.data.type === 'journal_article').sort(byCv);
+const chapters = pubs.filter((p) => p.data.type === 'book_chapter').sort(byYear);
+const reviews = pubs.filter((p) => p.data.type === 'book_review').sort(byYear);
+
+const listJoin = (a: string[]) =>
+  a.length <= 1 ? a.join('') : a.length === 2 ? `${a[0]} and ${a[1]}` : `${a.slice(0, -1).join(', ')}, and ${a[a.length - 1]}`;
+---
+
+<Base title="Research" description="Peer-reviewed articles, book chapters, and works in progress by Charles T. McClean.">
+  <header class="page-head">
+    <p class="kicker">Research</p>
+    <h1>Publications</h1>
+    <p class="lede">Peer-reviewed articles and chapters on the politics of age and Japan.</p>
+  </header>
+
+  <h2>Peer-reviewed articles</h2>
+  <ul class="works">
+    {articles.map((p) => <Pub pub={p.data} extra={coverage.get(p.id)} />)}
+  </ul>
+
+  <h2>Chapters in edited volumes</h2>
+  <ul class="works">
+    {chapters.map((p) => <Pub pub={p.data} extra={coverage.get(p.id)} />)}
+  </ul>
+
+  <h2>Selected works in progress</h2>
+  <ul class="works">
+    {wip.map((w) => (
+      <li>
+        <div class="work-title">{w.data.title}</div>
+        {w.data.coauthors.length > 0 && <div class="work-cite">with {listJoin(w.data.coauthors)}</div>}
+      </li>
+    ))}
+  </ul>
+
+  <h2>Book review</h2>
+  <ul class="works">
+    {reviews.map((p) => <Pub pub={p.data} extra={coverage.get(p.id)} />)}
+  </ul>
+</Base>

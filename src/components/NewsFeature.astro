@@ -1,0 +1,28 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { Image } from 'astro:assets';
+// One featured post: photo beside the text, in the style of the home tiles.
+interface Props { post: CollectionEntry<'news'>; kicker?: string }
+const { post, kicker = 'Latest' } = Astro.props;
+const d = post.data.date;
+const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' });
+const img = post.data.image;
+const contain = post.data.image_fit === 'contain';
+const label = post.data.tags[0] ?? kicker;
+---
+
+<a class:list={['news-feature', !img && 'no-image']} href={`/news/${post.id}/`}>
+  {img && (
+    <div class:list={['pic', contain && 'contain']}>
+      {contain
+        ? <Image src={img} alt="" width={960} loading="eager" />
+        : <Image src={img} alt="" width={960} height={600} loading="eager" />}
+    </div>
+  )}
+  <div class="text">
+    <div class="kicker">{label} · <time datetime={d.toISOString().slice(0, 10)}>{date}</time></div>
+    <h3>{post.data.title}</h3>
+    {post.data.excerpt && <p>{post.data.excerpt}</p>}
+    <span class="more">Read more</span>
+  </div>
+</a>

@@ -1,0 +1,25 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+npm-debug.log*
+.env
+.claude/preview-*.png
+.preview-shots/
+
+# Drop-in photos for upcoming posts
+inbox/
+
+# Local tooling and notes; the repo holds only what the build needs
+CLAUDE.md
+.claude/
+scripts/
+
+# JMED: the Atlas build artifact (only its aggregates sidecar is tracked), the full page, its picture and the codebook
+src/pages/jmed/_live.astro
+src/assets/jmed/
+public/jmed/jmed_codebook_v1.0.pdf
+public/jmed/map/*
+!public/jmed/map/data/
+public/jmed/map/data/*
+!public/jmed/map/data/munis_meta.json

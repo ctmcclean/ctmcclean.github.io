@@ -1,0 +1,19 @@
+---
+import type { CollectionEntry } from 'astro:content';
+// variant: 'plain' = date + title; 'rich' = adds the excerpt.
+interface Props { post: CollectionEntry<'news'>; showTags?: boolean; variant?: 'plain' | 'rich' }
+const { post, showTags = true, variant = 'plain' } = Astro.props;
+const d = post.data.date;
+const date = d.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' });
+---
+
+<li class:list={['news-item', variant === 'rich' && 'rich']}>
+  <time datetime={d.toISOString().slice(0, 10)}>{date}</time>
+  <div class="body">
+    <div class="t"><a href={`/news/${post.id}/`}>{post.data.title}</a></div>
+    {variant === 'rich' && post.data.excerpt && <p class="ex">{post.data.excerpt}</p>}
+    {showTags && post.data.tags.length > 0 && (
+      <div class="tags">{post.data.tags.map((t) => <a class="pill" href={`/news/tag/${t.toLowerCase()}/`}>{t}</a>)}</div>
+    )}
+  </div>
+</li>

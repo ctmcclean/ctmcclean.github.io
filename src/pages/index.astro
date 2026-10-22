@@ -1,0 +1,94 @@
+---
+import { JMED_LIVE } from '../lib/launch.mjs';
+import { getCollection } from 'astro:content';
+import { Image } from 'astro:assets';
+import Base from '../layouts/Base.astro';
+import NewsItem from '../components/NewsItem.astro';
+import NewsFeature from '../components/NewsFeature.astro';
+import headshot from '../assets/headshot.jpg';
+import SocialLinks from '../components/SocialLinks.astro';
+
+const all = (await getCollection('news')).sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+// Feature the newest post that has a picture; the next four stay as text lines.
+const featured = all.find((p) => p.data.image) ?? all[0];
+const news = all.filter((p) => p !== featured).slice(0, 4);
+---
+
+<Base>
+  <section class="hero">
+    <div class="intro">
+      <h1>Charles T. McClean</h1>
+      <p class="title">Assistant Professor of Political Science, Yale University</p>
+      <div class="actions">
+        <a class="btn primary" href="/research/">Research</a>
+        <a class="btn" href="/s/cmcclean_CV.pdf">Curriculum vitae</a>
+      </div>
+      <SocialLinks size={36} />
+      <p class="lede">
+        I study comparative politics, with a focus on the politics of age and Japan. My work asks why young
+        people are so rarely elected, what changes when they are, and how population aging reshapes democracy
+        and policymaking. I combine quasi-experimental analysis of large original datasets with survey
+        experiments, fieldwork, and interviews in Japan. Currently, I am completing a book manuscript,{' '}
+        <a href="/book/"><em>Silver Democracy: Youth Representation in an Aging Japan</em></a>.
+      </p>
+    </div>
+    <div class="portrait">
+      <Image src={headshot} alt="Charles T. McClean" width={520} height={520} densities={[1, 2]} loading="eager" />
+    </div>
+  </section>
+
+  <section class="tiles">
+    <a class="tile" href="/book/">
+      <div class="kicker">Book project</div>
+      <h3>Silver Democracy</h3>
+      <p>Why are young people underrepresented in elected office? And what changes for policy and democracy when they win?</p>
+      <span class="more">About the book</span>
+    </a>
+    <a class="tile" href="/jmed/">
+      <div class="kicker">{JMED_LIVE ? 'Dataset · v1.0' : 'Dataset'}</div>
+      <h3>Japanese Municipal Elections Dataset</h3>
+      <p>
+        {JMED_LIVE
+          ? '223,569 candidates in 21,111 mayoral and assembly elections across 2,027 municipalities, 2005–2025. Open data with an interactive map.'
+          : 'Candidate-level results for Japanese municipal assembly and mayoral elections from 2005 to 2025.'}
+      </p>
+      <span class="more">{JMED_LIVE ? 'Explore JMED' : 'About JMED'}</span>
+    </a>
+  </section>
+
+  <section class="home-news">
+    <div class="row">
+      <h2>News</h2>
+      <a class="all" href="/news/">All news</a>
+    </div>
+    {featured && <NewsFeature post={featured} />}
+    <ul class="news-list">
+      {news.map((p) => <NewsItem post={p} showTags={false} variant="rich" />)}
+    </ul>
+  </section>
+</Base>
+
+<style>
+  .hero > * { min-width: 0; }
+  .hero { display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, 1fr); gap: 3.5rem; align-items: center; padding: 3.5rem 0 3rem; }
+  h1 { font-size: clamp(2.4rem, 4.4vw, 3.3rem); font-weight: 500; letter-spacing: -0.015em; }
+  .title { font-family: var(--serif); font-size: 1.3rem; line-height: 1.4; color: var(--ink-2); margin: 0.6rem 0 0; }
+  .lede { font-size: 1.1rem; color: var(--ink); margin: 1.4rem 0 0; max-width: 58ch; }
+  .facts p { margin: 0 0 0.9rem; }
+  .facts dl { margin: 0; display: grid; grid-template-columns: max-content 1fr; gap: 0.45rem 1rem; }
+  .facts div { display: contents; }
+  .facts dt { font-family: var(--sans); font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent); padding-top: 0.35rem; }
+  .facts dd { margin: 0; font-size: 1.05rem; color: var(--ink); }
+  .actions { display: flex; gap: 0.75rem; margin-top: 1.3rem; flex-wrap: wrap; }
+  .intro :global(.social) { margin-top: 1rem; }
+  .portrait img { border-radius: 50%; width: 100%; max-width: min(420px, 100%); height: auto; margin-inline: auto; aspect-ratio: 1; object-fit: cover; }
+  .home-news { margin-top: 3.5rem; }
+  .row { display: flex; align-items: baseline; justify-content: space-between; }
+  .row h2 { margin: 0 0 0.9rem; }
+  .all { font-family: var(--sans); font-size: 0.9rem; }
+  @media (max-width: 760px) {
+    .hero { grid-template-columns: 1fr; gap: 2rem; padding-top: 2.5rem; }
+    .portrait { order: -1; }
+    .portrait img { max-width: 200px; margin-inline: 0; }
+  }
+</style>

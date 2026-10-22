@@ -1,0 +1,34 @@
+---
+const links = [
+  { href: 'mailto:charles.mcclean@yale.edu', label: 'Email' },
+  { href: 'https://scholar.google.com/citations?user=FC2NUe8AAAAJ&hl=en', label: 'Google Scholar' },
+  { href: 'https://dataverse.harvard.edu/dataverse/charlesmcclean', label: 'Dataverse' },
+  { href: 'https://bsky.app/profile/cmcclean.bsky.social', label: 'Bluesky' },
+  { href: 'https://x.com/cmcclean', label: 'X' },
+  { href: 'https://www.linkedin.com/in/charles-mcclean-73391b22', label: 'LinkedIn' },
+  { href: 'https://github.com/ctmcclean', label: 'GitHub' },
+  { href: '/rss.xml', label: 'RSS' },
+];
+const year = new Date().getFullYear();
+---
+
+<footer class="site-foot">
+  <div class="wrap inner">
+    <div class="links">
+      {links.map((l) => <a href={l.href}>{l.label}</a>)}
+    </div>
+    <p class="meta">
+      © {year} Charles T. McClean · Department of Political Science, Yale University ·
+      Built with <a href="https://astro.build">Astro</a>, hosted on GitHub Pages.
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-foot { border-top: 1px solid var(--rule); margin-top: 5rem; padding: 2rem 0 3rem; background: var(--paper-2); }
+  .inner { display: flex; flex-direction: column; gap: 0.8rem; }
+  .links { display: flex; gap: 1.2rem; flex-wrap: wrap; font-family: var(--sans); font-size: 0.9rem; }
+  .links a { text-decoration: none; color: var(--ink-2); }
+  .links a:hover { color: var(--accent); }
+  .meta a { color: inherit; }
+</style>

@@ -1,0 +1,24 @@
+{
+  "name": "charlesmcclean-website",
+  "type": "module",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "sync:pubs": "node scripts/sync-publications.mjs",
+    "sync:atlas": "bash scripts/sync-atlas.sh",
+    "migrate:news": "node scripts/migrate-news.mjs",
+    "snap:map": "node scripts/capture-map.mjs http://localhost:4321/jmed/map/index.html#v=turnout src/assets/jmed/map-snapshot.png"
+  },
+  "dependencies": {
+    "@astrojs/markdown-satteri": "^0.4.4",
+    "@astrojs/rss": "^4.0.19",
+    "astro": "^7.4.0",
+    "sharp": "^0.35.5",
+    "turndown": "^7.2.4",
+    "yaml": "^2.9.1"
+  }
+}
