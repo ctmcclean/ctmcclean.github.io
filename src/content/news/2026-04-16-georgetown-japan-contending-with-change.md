@@ -8,4 +8,6 @@ excerpt: "Sheila Smith hosted this conference on Japan at Georgetown's School of
 
 ![](../../assets/news/georgetown-japan-contending-with-change/img-1.jpg)
 
+![](../../assets/news/georgetown-japan-contending-with-change/img-2.jpg)
+
 Sheila Smith hosted this conference on Japan at [Georgetown's](https://asianstudies.georgetown.edu/) School of Foreign Service, with a keynote from former National Security Advisor Jake Sullivan. I spoke about why Takaichi has drawn such strong support from Japan's youngest voters and what that means for the LDP.
